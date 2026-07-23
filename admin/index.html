@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="robots" content="noindex, nofollow">
-	<title>Admin Panel</title>
+	<title>Edgetunnel Admin Panel</title>
 	<script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/@keeex/qrcodejs-kx@1.0.2/qrcode.min.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9560,7 +9560,7 @@
 						<div class="btn-container">
 							<button type="button" class="btn btn-qrcode" onclick="showQRCode('LinkURL')">📱QR code</button>
 							<button type="button" class="btn btn-primary"
-								onclick="copySubscription('LinkURL')">Copy node link</button>
+								onclick="copySubscription('LinkURL')">📋 Copy</button>
 						</div>
 					</div>
 				</div>
@@ -9575,7 +9575,7 @@
 						<div class="btn-container">
 							<button type="button" class="btn btn-qrcode" onclick="showQRCode('subLink')">📱QR code</button>
 							<button type="button" class="btn btn-primary"
-								onclick="copySubscription('subLink')">Copy Subscription</button>
+								onclick="copySubscription('subLink')">📋 Copy</button>
 						</div>
 					</div>
 				</div>
@@ -9588,7 +9588,7 @@
 								<button type="button" class="btn btn-qrcode"
 									onclick="showQRCode('base64Link')">📱QR code</button>
 								<button type="button" class="btn btn-primary"
-									onclick="copySubscription('base64Link')">Copy Subscription</button>
+									onclick="copySubscription('base64Link')">📋 Copy</button>
 							</div>
 						</div>
 					</div>
@@ -9600,7 +9600,7 @@
 								<button type="button" class="btn btn-qrcode"
 									onclick="showQRCode('clashLink')">📱QR code</button>
 								<button type="button" class="btn btn-primary"
-									onclick="copySubscription('clashLink')">Copy Subscription</button>
+									onclick="copySubscription('clashLink')">📋 Copy</button>
 							</div>
 						</div>
 					</div>
@@ -9612,7 +9612,7 @@
 								<button type="button" class="btn btn-qrcode"
 									onclick="showQRCode('singboxLink')">📱QR code</button>
 								<button type="button" class="btn btn-primary"
-									onclick="copySubscription('singboxLink')">Copy Subscription</button>
+									onclick="copySubscription('singboxLink')">📋 Copy</button>
 							</div>
 						</div>
 					</div>
@@ -9676,8 +9676,8 @@
 					</div>
 
 					<div id="generatorSection" class="form-group hidden-section">
-						<label for="generatorURL">优选订阅生成器</label>
-						<input type="text" id="generatorURL" title="优选订阅生成器" placeholder="sub.cmliussss.net"
+						<label for="generatorURL">Preferred subscription generator</label>
+						<input type="text" id="generatorURL" title="Preferred subscription generator" placeholder="sub.cmliussss.net"
 							onchange="processGeneratorURL()" oninput="processGeneratorURL()">
 					</div>
 
@@ -9690,9 +9690,9 @@
 							onclick="openChainProxyModal()">链式代理</button>
 						<div class="btn-group">
 							<button type="button" class="btn btn-secondary" onclick="cancelEdit('sub')" disabled
-								id="cancelSubBtn">取消</button>
+								id="cancelSubBtn">Cancel</button>
 							<button type="button" class="btn btn-primary" onclick="saveSub()" disabled
-								id="saveSubBtn">保存</button>
+								id="saveSubBtn">Save</button>
 						</div>
 					</div>
 				</div>
@@ -10453,12 +10453,12 @@
 	<!-- 重置配置确认弹窗 -->
 	<div class="modal-overlay" id="resetModal" onclick="closeResetModal(event)">
 		<div class="modal" onclick="event.stopPropagation()">
-			<h2 class="reset-modal-title">⚠️ 重置配置</h2>
-			<p class="reset-modal-description">重置配置将会初始化所有设置，包括订阅生成、节点信息、反代配置等。此操作不可撤销，请谨慎操作。</p>
-			<p class="reset-modal-confirm">确定是否完全重置配置？</p>
+			<h2 class="reset-modal-title">⚠️ Reset configuration</h2>
+			<p class="reset-modal-description">Resetting the configuration will initialize all settings, including subscription generation, node information, reverse proxy configuration, and more. This action is irreversible, please proceed with caution.</p>
+			<p class="reset-modal-confirm">Are you sure want to completely reset the configuration?</p>
 			<div class="reset-modal-buttons">
-				<button type="button" class="btn btn-primary btn-confirm-reset" onclick="confirmReset()">确定重置</button>
-				<button type="button" class="btn btn-secondary" onclick="closeResetModal()">取消重置</button>
+				<button type="button" class="btn btn-primary btn-confirm-reset" onclick="confirmReset()">Confirm </button>
+				<button type="button" class="btn btn-secondary" onclick="closeResetModal()">Cancel </button>
 			</div>
 		</div>
 	</div>
@@ -10466,13 +10466,13 @@
 	<!-- 清除Telegram配置确认弹窗 -->
 	<div class="modal-overlay" id="clearTelegramModal" onclick="closeClearTelegramModal(event)">
 		<div class="modal" onclick="event.stopPropagation()">
-			<h2 class="reset-modal-title">⚠️ 清除 Telegram 配置</h2>
-			<p class="reset-modal-description">清除 Telegram Bot 通知配置后，将无法继续接收 Telegram 消息通知。此操作不可撤销，请谨慎操作。</p>
-			<p class="reset-modal-confirm">确定是否清除 Telegram 通知配置？</p>
+			<h2 class="reset-modal-title">⚠️ Clear Telegram Configuration</h2>
+			<p class="reset-modal-description">After clearing the Telegram Bot notification configuration, you will no longer receive Telegram message notifications. This action is irreversible, please proceed with caution.</p>
+			<p class="reset-modal-confirm">Are you sure want to clear the Telegram notification configuration?</p>
 			<div class="reset-modal-buttons">
 				<button type="button" class="btn btn-primary btn-confirm-reset"
-					onclick="confirmClearTelegramConfig()">确定清除</button>
-				<button type="button" class="btn btn-secondary" onclick="closeClearTelegramModal()">取消</button>
+					onclick="confirmClearTelegramConfig()">Confirm</button>
+				<button type="button" class="btn btn-secondary" onclick="closeClearTelegramModal()">Cancel</button>
 			</div>
 		</div>
 	</div>
@@ -19281,9 +19281,9 @@
 		function copySubscription(elementId) {
 			const element = document.getElementById(elementId);
 			navigator.clipboard.writeText(element.value).then(() => {
-				showToast('📋 已复制到剪贴板', 'success');
+				showToast('📋 Copied to clipboard', 'success');
 			}).catch(() => {
-				showToast('复制失败', 'error');
+				showToast('Copy failed', 'error');
 			});
 		}
 
