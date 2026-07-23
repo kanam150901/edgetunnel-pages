@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="robots" content="noindex, nofollow">
-	<title>管理后台</title>
+	<title>Admin Panel</title>
 	<script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/@keeex/qrcodejs-kx@1.0.2/qrcode.min.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9388,21 +9388,21 @@
 
 			<div class="header">
 				<div class="header-title">
-					<h1 id="pageTitle">加载中...</h1>
+					<h1 id="pageTitle">Loading...</h1>
 				</div>
 				<div class="header-buttons">
 					<button type="button" class="btn btn-mode-toggle" id="modeToggleBtn" onclick="toggleUserMode()">🐣
-						我是小白！我想简单点！</button>
+						SImple Mode</button>
 					<button type="button" class="btn btn-danger btn-reset"
-						onclick="resetConfigWithConfirm()">⚠️重置配置</button>
-					<button type="button" class="btn btn-primary" onclick="logout()">👋退出登录</button>
+						onclick="resetConfigWithConfirm()">⚠️Reset Config</button>
+					<button type="button" class="btn btn-primary" onclick="logout()">👋Logout</button>
 				</div>
 			</div>
 
 			<!-- Cloudflare Workers/Pages 使用统计模块 -->
 			<div class="module cf-usage-module collapsed" id="cfUsageModule">
 				<div class="module-title" onclick="toggleModule(this)">
-					Workers/Pages 请求使用情况
+					Workers/Pages Usage requests
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -9411,9 +9411,9 @@
 				<div>
 					<div class="cf-progress-bar">
 						<!-- Workers 进度条 (绿色) -->
-						<div class="cf-bar-segment cf-bar-green" id="cfWorkerBar" title="Workers 请求"></div>
+						<div class="cf-bar-segment cf-bar-green" id="cfWorkerBar" title="Workers Requests"></div>
 						<!-- Pages 进度条 (蓝色) -->
-						<div class="cf-bar-segment cf-bar-blue" id="cfPagesBar" title="Pages 请求"></div>
+						<div class="cf-bar-segment cf-bar-blue" id="cfPagesBar" title="Pages Requests"></div>
 						<!-- 总体百分比文字 (中央) -->
 						<div class="cf-percentage-center" id="cfPercentageCenter">0%</div>
 					</div>
@@ -9424,15 +9424,15 @@
 						<div class="cf-stats-card">
 							<div class="cf-stats-grid">
 								<div class="cf-stat-item">
-									<div class="cf-stat-label">Workers 请求</div>
+									<div class="cf-stat-label">Workers Requests</div>
 									<div class="cf-stat-value cf-value-green" id="cfWorkerCount">-</div>
 								</div>
 								<div class="cf-stat-item">
-									<div class="cf-stat-label">Pages 请求</div>
+									<div class="cf-stat-label">Pages Requests</div>
 									<div class="cf-stat-value cf-value-blue" id="cfPagesCount">-</div>
 								</div>
 								<div class="cf-stat-item">
-									<div class="cf-stat-label">日配额</div>
+									<div class="cf-stat-label">Daily quota</div>
 									<div class="cf-stat-value cf-value-orange" id="cfDailyQuota">100,000</div>
 								</div>
 							</div>
@@ -9442,14 +9442,14 @@
 						<div class="cf-info-box">
 							<div class="cf-info-icon">ℹ️</div>
 							<div class="cf-info-text">
-								<strong>每日请求数重置清零：</strong><br><span id="countdown" class="cf-highlight"><span
-										class="countdown-text">距离重置还有</span> <span class="countdown-numbers"
-										id="countdownHours">00</span><span class="countdown-text">小时</span><span
+								<strong>Daily request count resets to zero：</strong><br><span id="countdown" class="cf-highlight"><span
+										class="countdown-text">Time remaining until reset</span> <span class="countdown-numbers"
+										id="countdownHours">00</span><span class="countdown-text">hours</span><span
 										class="countdown-numbers" id="countdownMinutes">00</span><span
-										class="countdown-text">分</span><span class="countdown-numbers"
+										class="countdown-text">minutes</span><span class="countdown-numbers"
 										id="countdownSeconds">00</span><span
-										class="countdown-text">秒</span></span>，<br>北京时间 (UTC+8) <strong
-									class="cf-highlight">8:00</strong>重置，<br>今日使用情况总计：<strong class="cf-highlight"
+										class="countdown-text">second</span></span>，<br>Beijing Time (UTC+8) <strong
+									class="cf-highlight">8:00</strong>Resets at ，<br>Total usage today：<strong class="cf-highlight"
 									id="cfTotalDisplay">-</strong>。
 							</div>
 						</div>
@@ -9460,7 +9460,7 @@
 			<!-- 网络信息模块 -->
 			<div class="module network-detail-collapsed">
 				<div class="module-title" onclick="toggleNetworkModule(this)">
-					🌍 当前网络信息
+					🌍 Current Network Information
 					<svg class="collapse-icon" viewBox="0 0 24 24" style="transform: rotate(90deg);">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -9471,7 +9471,7 @@
 							<div class="network-card-title">
 								<span class="status-indicator" id="status-ipip"></span>
 								<div class="title-text">
-									<div class="title-main">国内测试</div>
+									<div class="title-main">Domestic test</div>
 									<div class="title-subtitle">CN-Test</div>
 								</div>
 							</div>
@@ -9480,7 +9480,7 @@
 								<div class="location-text">
 									<span id="ipip-country" class="country-text">-</span>
 								</div>
-								<div class="network-tip">· 您访问国内站点所使用的IP</div>
+								<div class="network-tip">· IP address you use to access domestic websites</div>
 							</div>
 						</div>
 
@@ -9488,8 +9488,8 @@
 							<div class="network-card-title">
 								<span class="status-indicator" id="status-overseas"></span>
 								<div class="title-text">
-									<div class="title-main">国外测试</div>
-									<div class="title-subtitle">漏网之鱼</div>
+									<div class="title-main">Overseas test</div>
+									<div class="title-subtitle">IP that slipped through the block</div>
 								</div>
 							</div>
 							<div class="network-info-content">
@@ -9497,7 +9497,7 @@
 								<div class="location-text">
 									<span id="overseas-country" class="country-text">-</span>
 								</div>
-								<div class="network-tip">· 您访问没有被封的国外站点所使用的IP</div>
+								<div class="network-tip">· IP you are using to access foreign sites that have not been blocked</div>
 							</div>
 						</div>
 
@@ -9514,7 +9514,7 @@
 								<div class="location-text">
 									<span id="cf-country" class="country-text">-</span>
 								</div>
-								<div class="network-tip">· 您访问CFCDN站点所使用的落地IP</div>
+								<div class="network-tip">· IP address used to access the CFCDN site.</div>
 							</div>
 						</div>
 
@@ -9522,7 +9522,7 @@
 							<div class="network-card-title">
 								<span class="status-indicator" id="status-twitter"></span>
 								<div class="title-text">
-									<div class="title-main">墙外测试</div>
+									<div class="title-main">External (GFW-bypass) test</div>
 									<div class="title-subtitle">!CN-Test</div>
 								</div>
 							</div>
@@ -9531,13 +9531,11 @@
 								<div class="location-text">
 									<span id="twitter-country" class="country-text">-</span>
 								</div>
-								<div id="twitter-tip" class="network-tip">· 您访问墙外站点所使用的IP</div>
+								<div id="twitter-tip" class="network-tip">· IP address you use to access sites outside the Great Firewall.</div>
 							</div>
 						</div>
 					</div>
-					<small style="font-size: 12px; color: #9ca3af; margin-top: 6px; display: block;">💡 <b>国内测试</b>
-						是由您梯子的 <b>分流规则</b> 决定的，<b>国外测试、谷歌</b> 是由您的 <b>优选IP</b> 决定的，而 <b>CF、ChatGPT、推特</b> 是由您的
-						<b>PROXYIP</b> 决定的。</small>
+					<small style="font-size: 12px; color: #9ca3af; margin-top: 6px; display: block;">💡 <b>Domestic Test</b> is determined by your proxy's <b>routing rules</b>, <b>Overseas Test</b> and <b>Google</b> are determined by your <b>preferred IP</b>, while <b>CF, ChatGPT, Twitter</b> are determined by your <b>PROXY IP</b>.。</small>
 					<div class="module-content" style="display: none;" id="network-module-content">
 						<!-- 延迟测试卡片 -->
 						<div class="latency-cards" id="latency-cards">
@@ -9550,71 +9548,71 @@
 			<!-- 模块1: 订阅链接 -->
 			<div class="module">
 				<div class="module-title" onclick="toggleModule(this)">
-					📋 获取节点链接
+					📋 Get configuration
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
 				</div>
 				<div class="form-group">
-					<label for="LinkURL">节点链接格式</label>
+					<label for="LinkURL">Node link format</label>
 					<div class="input-wrapper subscription-link-wrapper">
-						<input type="text" id="LinkURL" title="节点链接格式" readonly>
+						<input type="text" id="LinkURL" title="Node link format" readonly>
 						<div class="btn-container">
-							<button type="button" class="btn btn-qrcode" onclick="showQRCode('LinkURL')">📱二维码</button>
+							<button type="button" class="btn btn-qrcode" onclick="showQRCode('LinkURL')">📱QR code</button>
 							<button type="button" class="btn btn-primary"
-								onclick="copySubscription('LinkURL')">复制节点</button>
+								onclick="copySubscription('LinkURL')">Copy node link</button>
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="label-with-hint">
-						<label for="subLink">自适应订阅</label>
-						<button type="button" class="inline-hint-btn" title="查看订阅鉴权 TOKEN 说明"
-							onclick="showAuthTokenHelpModal('token')" aria-label="查看订阅鉴权 TOKEN 说明">!</button>
+						<label for="subLink">Adaptive subscription</label>
+						<button type="button" class="inline-hint-btn" title="View subscription authentication token instructions"
+							onclick="showAuthTokenHelpModal('token')" aria-label="View subscription authentication token instructions">!</button>
 					</div>
 					<div class="input-wrapper subscription-link-wrapper">
 						<input type="text" id="subLink" title="自适应订阅" readonly>
 						<div class="btn-container">
-							<button type="button" class="btn btn-qrcode" onclick="showQRCode('subLink')">📱二维码</button>
+							<button type="button" class="btn btn-qrcode" onclick="showQRCode('subLink')">📱QR code</button>
 							<button type="button" class="btn btn-primary"
-								onclick="copySubscription('subLink')">复制订阅</button>
+								onclick="copySubscription('subLink')">Copy Subscription</button>
 						</div>
 					</div>
 				</div>
 				<div class="module-content">
 					<div class="form-group">
-						<label for="base64Link">Base64订阅</label>
+						<label for="base64Link">Base64 Subscriptions</label>
 						<div class="input-wrapper subscription-link-wrapper">
 							<input type="text" id="base64Link" title="Base64订阅" readonly>
 							<div class="btn-container">
 								<button type="button" class="btn btn-qrcode"
-									onclick="showQRCode('base64Link')">📱二维码</button>
+									onclick="showQRCode('base64Link')">📱QR code</button>
 								<button type="button" class="btn btn-primary"
-									onclick="copySubscription('base64Link')">复制订阅</button>
+									onclick="copySubscription('base64Link')">Copy Subscription</button>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="clashLink">Clash订阅</label>
+						<label for="clashLink">Clash Subscription</label>
 						<div class="input-wrapper subscription-link-wrapper">
 							<input type="text" id="clashLink" title="Clash订阅" readonly>
 							<div class="btn-container">
 								<button type="button" class="btn btn-qrcode"
-									onclick="showQRCode('clashLink')">📱二维码</button>
+									onclick="showQRCode('clashLink')">📱QR code</button>
 								<button type="button" class="btn btn-primary"
-									onclick="copySubscription('clashLink')">复制订阅</button>
+									onclick="copySubscription('clashLink')">Copy Subscription</button>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="singboxLink">SingBox订阅</label>
+						<label for="singboxLink">SingBox Subscription</label>
 						<div class="input-wrapper subscription-link-wrapper">
 							<input type="text" id="singboxLink" title="SingBox订阅" readonly>
 							<div class="btn-container">
 								<button type="button" class="btn btn-qrcode"
-									onclick="showQRCode('singboxLink')">📱二维码</button>
+									onclick="showQRCode('singboxLink')">📱QR code</button>
 								<button type="button" class="btn btn-primary"
-									onclick="copySubscription('singboxLink')">复制订阅</button>
+									onclick="copySubscription('singboxLink')">Copy Subscription</button>
 							</div>
 						</div>
 					</div>
@@ -9624,29 +9622,29 @@
 			<!-- 模块2: 编辑订阅生成 -->
 			<div class="module" id="preferredSubscriptionModule">
 				<div class="module-title non-collapsible">
-					⚡️ 优选订阅生成
+					⚡️ Generate preferred subscription
 				</div>
 				<div class="module-content">
 
 					<div class="form-group">
-						<label for="ipMode">优选订阅模式</label>
-						<select id="ipMode" title="优选订阅模式" onchange="updateIPMode()">
-							<option value="generator">优选订阅生成器（抄作业，直接使用大佬优选好的结果）</option>
-							<option value="random">随机优选（根据订阅时的网络自动下发对应网络的官方优选）</option>
-							<option value="custom">自定义订阅（支持汇聚订阅）</option>
+						<label for="ipMode">Subscription Mode</label>
+						<select id="ipMode" title="Preferred subscription mode" onchange="updateIPMode()">
+							<option value="generator">Optimized subscription (just copy and directly use the optimized results</option>
+							<option value="random">Random Optimized subscription (automatically delivers the official optimized IPs corresponding to the network environment at the time of subscription)</option>
+							<option value="custom">Custom subscription (with support for subscription aggregation / merging)</option>
 						</select>
 					</div>
 
 					<div id="randomIPSection" class="form-group">
-						<label for="randomCount">随机优选数量</label>
-						<input type="number" id="randomCount" title="随机优选数量 1~99" min="1" max="99" value="16"
+						<label for="randomCount">Number of random preferred IPs</label>
+						<input type="number" id="randomCount" title="Number of random preferred IPs 1~99" min="1" max="99" value="16"
 							onchange="markModified('sub')" oninput="if(this.value>99){this.value=99;}">
 					</div>
 
 					<div id="portSection" class="form-group hidden-section">
-						<label for="specifiedPort">指定优选端口</label>
+						<label for="specifiedPort">Custom port</label>
 						<select id="specifiedPort" onchange="markModified('sub')">
-							<option value="-1">随机端口</option>
+							<option value="-1">Random port</option>
 							<option value="443">443</option>
 							<option value="2053">2053</option>
 							<option value="2083">2083</option>
@@ -9658,9 +9656,9 @@
 
 					<div id="customIPSection" class="form-group hidden-section">
 						<div class="label-with-hint">
-							<label for="customIPs">自定义优选</label>
-							<button type="button" class="inline-hint-btn" title="查看自定义优选 填写说明"
-								onclick="showAuthTokenHelpModal('customIPs')" aria-label="查看自定义优选 填写说明">!</button>
+							<label for="customIPs">Custom preferred IPs</label>
+							<button type="button" class="inline-hint-btn" title="View custom preferred IPs — filling instructions"
+								onclick="showAuthTokenHelpModal('customIPs')" aria-label=""View custom preferred IPs — filling instructions">!</button>
 						</div>
 						<div class="line-editor line-editor-wrap" id="subCustomEditor">
 							<div class="gutter" aria-hidden="true">
@@ -9670,7 +9668,7 @@
 								<div class="line-shades" aria-hidden="true">
 									<div class="shade-line"></div>
 								</div>
-								<textarea id="customIPs" title="自定义优选地址" wrap="soft" placeholder="www.visa.cn#优选域名
+								<textarea id="customIPs" title="Custom IP addresses" wrap="soft" placeholder="www.visa.cn#优选域名
 104.24.0.232:8443#优选IPv4
 [2606:4700::]:2053#优选IPv6" onchange="markModified('sub')"></textarea>
 							</div>
@@ -20275,11 +20273,11 @@
 
 			if (isSimpleMode) {
 				cardContainer.classList.add('simple-mode');
-				btn.textContent = '🚀 我是高手！我就要折腾！';
+				btn.textContent = '🚀 Expert Mode';
 				localStorage.setItem('userMode', 'simple');
 			} else {
 				cardContainer.classList.remove('simple-mode');
-				btn.textContent = '🐣 我是小白！我想简单点！';
+				btn.textContent = '🐣 Simple Mode！';
 				localStorage.setItem('userMode', 'expert');
 			}
 
